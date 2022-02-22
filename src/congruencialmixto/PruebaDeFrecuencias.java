@@ -13,7 +13,7 @@ import org.apache.commons.math3.distribution.ChiSquaredDistribution;
 public class PruebaDeFrecuencias {
     public static void main(String[] args) throws IOException {
         ArrayList<Double> valores = new ArrayList<Double>();
-        double fe=0, fo=0, x0=0, intervalos=5, alpha = 0.05, gradosLibertad = intervalos - 1;
+        double fe=0, fo=0, x0=0, intervalos=5, alpha = 1 - 0.05, gradosLibertad = intervalos - 1;
         
         //Lee los datos del archivo CSV
         BufferedReader csvReader = new BufferedReader(new FileReader("Salida.csv"));
@@ -56,18 +56,17 @@ public class PruebaDeFrecuencias {
         System.out.println();
         
         // Obtener la chi cuadrada con la que compararemos
-        ChiSquaredDistribution chi = new ChiSquaredDistribution(gradosLibertad, alpha);
-        double x02 = chi.cumulativeProbability(1);//????
-        x02 = 9.49;
+        ChiSquaredDistribution chi = new ChiSquaredDistribution(gradosLibertad);
+        double x02 = chi.inverseCumulativeProbability(alpha);
         
         
-        System.out.println("X0 = " + x0);
-        System.out.println("X0 con la que se compara = " + x02+ " con nivel de significancia = "+ alpha + " y " + gradosLibertad + " grados de libertad");
+        System.out.println("X02 = " + x0);
+        System.out.println("X02 con la que se compara = " + (Math.round(100.0*x02)/100.0)+ " con nivel de significancia = "+ (Math.round(100.0*(1 - alpha))/100.0) + " y " + gradosLibertad + " grados de libertad");
         
         if(x0 < x02){
             System.out.println("No se puede rechazar la hipótesis de que la muestra proviene de una distribucion uniforme");
         } else{
-            System.out.println("Se rechaza la hipótesis de que la muestra proviene de una distribucion uniforme");
+            System.out.println("Se acepta la hipótesis alternativa");
         }
     }
 }
