@@ -44,7 +44,6 @@ public class PruebaKolmogorovSmirnov {
         double d = 1.36 / Math.sqrt(tamano);
         if(tamano==100) d =0.134;
         
-        System.out.println("Para esta prueba asegurese de ");
         System.out.println("Dn maxima = "+DnMax);
         System.out.println("d con nivel de significancia de 5% = "+d);
         
