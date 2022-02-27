@@ -61,7 +61,7 @@ public class PruebaDeFrecuencias {
         
         
         System.out.println("X02 = " + x0);
-        System.out.println("X02 con la que se compara = " + (Math.round(100.0*x02)/100.0)+ " con nivel de significancia = "+ (Math.round(100.0*(1 - alpha))/100.0) + " y " + gradosLibertad + " grados de libertad");
+        System.out.println("X2 con la que se compara = " + (Math.round(100.0*x02)/100.0)+ " con nivel de significancia = "+ (Math.round(100.0*(1 - alpha))/100.0) + " y " + gradosLibertad + " grados de libertad");
         
         if(x0 < x02){
             System.out.println("No se puede rechazar la hipótesis de que la muestra proviene de una distribucion uniforme");
