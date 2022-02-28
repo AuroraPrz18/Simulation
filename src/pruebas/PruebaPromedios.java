@@ -1,4 +1,4 @@
-package congruencialmixto;
+package pruebas;
 
 import com.csvreader.CsvWriter;
 import java.io.BufferedReader;

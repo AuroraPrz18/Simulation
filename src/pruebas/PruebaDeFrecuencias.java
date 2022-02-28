@@ -1,4 +1,4 @@
-package congruencialmixto;
+package pruebas;
 import java.util.Collections;
 import java.io.BufferedReader;
 import java.io.FileReader;
