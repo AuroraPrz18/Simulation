@@ -56,7 +56,7 @@ public class Prueba_Series {
         double chi=c.inverseCumulativeProbability(1-alfa);
         
         System.out.println("\nX02: "+x02);
-        System.out.println("X02 con la que se compara: "+chi+"\n");
+        System.out.println("X2 con la que se compara: "+chi+"\n");
         
         return x02<chi;
     }
