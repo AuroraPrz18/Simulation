@@ -16,7 +16,7 @@ public class PruebaPromedios {
         double x=0, z0, z;
         //Lee los datos del archivo CSV
         NormalDistribution normal=new NormalDistribution();
-        BufferedReader csvReader = new BufferedReader(new FileReader("Salida.csv"));
+        BufferedReader csvReader = new BufferedReader(new FileReader("SalidaPruebaPromedios.csv"));
         String numero = "";
         numero = csvReader.readLine();
         while (numero != null && !numero.equals("")) {
